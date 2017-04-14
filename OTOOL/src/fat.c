@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 14:40:45 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 15:14:29 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:37:44 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void					parse_fat(void *ptr)
 	{
 		if (rev_32(arch->cputype) == CPU_TYPE_X86)
 		{
-			printf("For architecture X86:\n");
+			ft_printf("For architecture X86:\n");
 			ft_otool(ptr + rev_32(arch->offset));
 		}
 		if (rev_32(arch->cputype) == CPU_TYPE_X86_64)
 		{
-			printf("For architecture X86_64:\n");
+			ft_printf("For architecture X86_64:\n");
 			ft_otool(ptr + rev_32(arch->offset));
 		}
 		arch = (struct fat_arch *)(((void *)arch) + sizeof(struct fat_arch));

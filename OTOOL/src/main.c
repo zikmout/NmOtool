@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 16:35:42 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 15:07:59 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:38:04 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int							ft_check_arg1(int *fd, int ac_nb, char **av)
 {
 	if ((*fd = open(av[ac_nb], O_RDONLY)) < 0)
 	{
-		printf("%s:%s: No such file or directory.\n", av[0], av[ac_nb]);
+		ft_printf("%s:%s: No such file or directory.\n", av[0], av[ac_nb]);
 		return (0);
 	}
 	return (1);
@@ -31,17 +31,17 @@ int							ft_check_arg(void *ptr, int ac_nb, char **av)
 		return (0);
 	if (fstat(fd, &buf) == -1)
 	{
-		printf("Error with fstat. Exit\n");
+		ft_printf("Error with fstat. Exit\n");
 		return (0);
 	}
 	if ((ptr = mmap(0, (size_t)buf.st_size, PROT_READ,\
 					MAP_PRIVATE, fd, 0)) == MAP_FAILED)
 	{
-		printf("Error with mmap. Exit\n");
+		ft_printf("Error with mmap. Exit\n");
 		return (0);
 	}
 	if (g_env.argc > 2)
-		printf("\n%s:\n", av[ac_nb]);
+		ft_printf("\n%s:\n", av[ac_nb]);
 	ft_otool(ptr);
 	if (munmap(ptr, buf.st_size) == -1)
 		return (0);
@@ -119,5 +119,5 @@ void						ft_otool(void *ptr)
 	else if (magic == FAT_CIGAM)
 		parse_fat(ptr);
 	else
-		printf("Not handled yet. Exit\n");
+		ft_printf("Not handled yet. Exit\n");
 }

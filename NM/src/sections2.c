@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 10:35:11 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 11:15:12 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:40:43 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void							parse_lib(void *ptr)
 	while (i < ((*((int *)str)) / sizeof(struct ranlib)))
 	{
 		ar = (void *)ptr + ranlib[i].ran_off;
-		printf("\n%s(%s):\n", g_env.argv[1], ft_strchr(ar->ar_name, '\n') + 1);
+		ft_printf("\n%s(%s):\n",\
+				g_env.argv[1], ft_strchr(ar->ar_name, '\n') + 1);
 		ft_nm((void *)ar + sizeof(*ar) + get_len_lib(ar->ar_name));
 		i++;
 	}

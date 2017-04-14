@@ -6,7 +6,7 @@
 #    By: ssicard <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/10 16:25:02 by ssicard           #+#    #+#              #
-#    Updated: 2017/04/14 15:09:50 by ssicard          ###   ########.fr        #
+#    Updated: 2017/04/14 15:37:13 by ssicard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CCLIB = -Llibft -lft
 CCFLAGS = -Wall -Werror -Wextra
 SRCDIR = src
 OBJDIR = obj
-INCDIR = includes libft printf/includes
+INCDIR = includes libft libft/printf/includes
 
 SRC =	main.c\
 		utils.c\
@@ -30,7 +30,7 @@ INCS = $(addprefix -I , $(INCDIR))
 all: $(NAME)
 $(NAME): build $(OBJS)
 	@make -C libft
-	@gcc $(CCLIB) -o $(NAME) $(OBJS)
+	@gcc $(CCLIB) -o $(NAME) $(OBJS) libft/printf/libftprintf.a
 
 build:
 	@mkdir -p $(OBJDIR)

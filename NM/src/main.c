@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 16:35:42 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 15:32:50 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:34:52 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ int							ft_check_arg(void *ptr, int ac_nb, char **av)
 		return (0);
 	if (fstat(fd, &buf) == -1)
 	{
-		printf("Error with fstat. Exit\n");
+		ft_printf("Error with fstat. Exit\n");
 		return (0);
 	}
 	if ((ptr = mmap(0, (size_t)buf.st_size, PROT_READ,\
 					MAP_PRIVATE, fd, 0)) == MAP_FAILED)
 	{
-		printf("Error with mmap. Exit\n");
+		ft_printf("Error with mmap. Exit\n");
 		return (0);
 	}
 	if (g_env.argc > 2)
-		printf("\n%s:\n", av[ac_nb]);
+		ft_printf("\n%s:\n", av[ac_nb]);
 	ft_nm(ptr);
 	if (munmap(ptr, buf.st_size) == -1)
 		return (0);
@@ -141,5 +141,5 @@ void						ft_nm(void *ptr)
 	else if (!ft_strncmp(ptr, ARMAG, SARMAG))
 		parse_lib(ptr);
 	else
-		printf("Not handled yet. Exit\n");
+		ft_printf("Not handled yet. Exit\n");
 }

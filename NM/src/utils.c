@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 10:42:14 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 10:43:04 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:35:30 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int			ft_check_arg1(int *fd, int ac_nb, char **av)
 {
 	if ((*fd = open(av[ac_nb], O_RDONLY)) < 0)
 	{
-		printf("%s:%s: No such file or directory.\n", av[0], av[ac_nb]);
+		ft_printf("%s:%s: No such file or directory.\n", av[0], av[ac_nb]);
 		return (0);
 	}
 	return (1);

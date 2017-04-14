@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 13:59:00 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 15:09:25 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:38:29 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,16 @@ void					print_res(long unsigned int addr,\
 			if (i != 0)
 				addr += 16;
 			if (g_env.type == 64)
-				printf("%.16lx        ", addr);
+				ft_printf("%.16lx        ", addr);
 			else
-				printf("%.8lx        ", addr);
+				ft_printf("%.8lx        ", addr);
 		}
 		str = ft_itoa_base(ptr[i], 16, 2);
-		printf("%s ", str);
+		ft_printf("%s ", str);
 		free(str);
 		if ((i + 1) % 16 == 0)
-			printf("\n");
+			ft_printf("\n");
 		i++;
 	}
-	printf("\n");
+	ft_printf("\n");
 }

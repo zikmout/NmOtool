@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 10:45:01 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 10:53:35 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:34:22 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void		list_print_64(t_sym **head)
 	{
 		if (tmp->type != 'z' && tmp->value == 0 && tmp->type != 'T')
 		{
-			printf("                 ");
-			printf("%c ", tmp->type);
-			printf("%s\n", tmp->name);
+			ft_printf("                 ");
+			ft_printf("%c ", tmp->type);
+			ft_printf("%s\n", tmp->name);
 		}
 		else if (tmp->type != 'z')
 		{
-			printf("%.16llx ", tmp->value);
-			printf("%c ", tmp->type);
-			printf("%s\n", tmp->name);
+			ft_printf("%.16llx ", tmp->value);
+			ft_printf("%c ", tmp->type);
+			ft_printf("%s\n", tmp->name);
 		}
 		tmp = tmp->next;
 	}
@@ -44,15 +44,15 @@ void		list_print_32(t_sym **head)
 	{
 		if (tmp->type != 'z' && tmp->value == 0 && tmp->type != 'T')
 		{
-			printf("         ");
-			printf("%c ", tmp->type);
-			printf("%s\n", tmp->name);
+			ft_printf("         ");
+			ft_printf("%c ", tmp->type);
+			ft_printf("%s\n", tmp->name);
 		}
 		else if (tmp->type != 'z')
 		{
-			printf("%.8llx ", tmp->value);
-			printf("%c ", tmp->type);
-			printf("%s\n", tmp->name);
+			ft_printf("%.8llx ", tmp->value);
+			ft_printf("%c ", tmp->type);
+			ft_printf("%s\n", tmp->name);
 		}
 		tmp = tmp->next;
 	}
