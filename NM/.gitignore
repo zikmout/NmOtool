@@ -1,0 +1,15 @@
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# MacOS spec
+.DS_Store
+
+# Executables
+*.out
+
+# Test files
+tmp
+tmp2

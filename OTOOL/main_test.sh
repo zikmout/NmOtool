@@ -1,0 +1,11 @@
+./ft_otool /usr/bin/audiodevice
+./ft_otool /usr/lib/libbz2.1.0.dylib
+./ft_otool nm-otool-tests/32_exe_hard
+./ft_otool nm-otool-tests/64_exe_easy
+./ft_otool nm-otool-tests/64_exe_medium
+./ft_otool nm-otool-tests/64_exe_hard
+./ft_otool nm-otool-tests/64_lib_dynamic_medium
+./ft_otool nm-otool-tests/64_lib_dynamic_hard
+./ft_otool nm-otool-tests/fat_hard
+./ft_otool nm-otool-tests/object_medium
+./ft_otool nm-otool-tests/64_bundle
