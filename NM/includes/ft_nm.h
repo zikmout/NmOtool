@@ -6,7 +6,7 @@
 /*   By: ssicard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 16:32:56 by ssicard           #+#    #+#             */
-/*   Updated: 2017/04/14 11:01:38 by ssicard          ###   ########.fr       */
+/*   Updated: 2017/04/14 15:32:31 by ssicard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_NM_H
 # define LCS(x) ((x == 64) ? (LC_SEGMENT_64) : (LC_SEGMENT))
 # include "libft.h"
+# include "printf.h"
 # include <sys/mman.h>
 # include <fcntl.h>
 # include <sys/stat.h>
